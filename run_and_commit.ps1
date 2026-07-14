@@ -19,7 +19,7 @@ $venvPython = Join-Path $ScriptDir ".venv\Scripts\python.exe"
 $scriptPath = Join-Path $ScriptDir "build_variant_map.py"
 
 # Run Python script, capture all streams, output to screen and append to log
-& $venvPython $scriptPath 2>&1 | Tee-Object -FilePath $LogFile -Append
+& $venvPython -u $scriptPath 2>&1 | Tee-Object -FilePath $LogFile -Append
 
 if ($LASTEXITCODE -ne 0) {
     Write-Both "ERROR: Python script failed with exit code $LASTEXITCODE."
