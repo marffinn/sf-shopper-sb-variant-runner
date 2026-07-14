@@ -104,7 +104,16 @@ def main():
         base_code = product.get("code", "")
         stock_ids = product.get("options", [])
 
-        product_index.append({"name": name, "code": base_code, "url": url})
+        # Extract product main image if available
+        main_image = product.get("main_image")
+        image_url = None
+        if isinstance(main_image, dict):
+            gfx_id = main_image.get("gfx_id")
+            name_file = main_image.get("name")
+            if gfx_id and name_file:
+                image_url = f"https://sklep.starfix.eu/environment/cache/images/productGfx_{gfx_id}_100_100/{name_file}"
+
+        product_index.append({"name": name, "code": base_code, "url": url, "image": image_url})
 
         if not stock_ids:
             continue
@@ -119,7 +128,7 @@ def main():
             if not code or not options:
                 continue
             hash_str = ";".join(f"{k}:{v}" for k, v in options.items())
-            variant_map[code] = {"url": url, "hash": hash_str}
+            variant_map[code] = {"url": url, "hash": hash_str, "image": image_url}
 
         print(f"Product {product_id}: {len(stocks)} variants processed")
 
