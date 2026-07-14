@@ -47,7 +47,7 @@ def get_all_products():
         if page >= data["pages"]:
             break
         page += 1
-        time.sleep(0.2)  # be gentle on the API
+        time.sleep(1)  # be gentle on the API
     return products
 
 def get_stocks_bulk(stock_ids):
@@ -79,14 +79,14 @@ def get_stocks_bulk(stock_ids):
             raise RuntimeError("Exceeded max retries on bulk endpoint (rate limit).")
 
         response = r.json()
-        # Real shape: {"errors": false, "items": [{"id": "...", "code": 200, "body": {...}}]}
+        
         for item in response.get("items", []):
             if item.get("code") == 200 and isinstance(item.get("body"), dict):
                 results[item["id"]] = item["body"]
             else:
                 print(f"  Warning: stock {item.get('id')} returned code {item.get('code')}")
 
-        time.sleep(1.0)  # slower pace between batches to avoid hitting the limit again
+        time.sleep(1.0)
     return results
 
 def main():
