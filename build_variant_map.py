@@ -10,13 +10,21 @@ Usage:
     python build_variant_map.py
 """
 
+import os
 import requests
 import json
 import time
+from dotenv import load_dotenv
 
-SHOP_URL = "https://sklep.starfix.eu"
-LOGIN = "admin"           # your admin login
-PASSWORD = "chupacabra1234L!"   # do NOT commit this to any public repo
+# Load environment variables from .env file
+load_dotenv()
+
+SHOP_URL = os.getenv("SHOP_URL", "https://sklep.starfix.eu")
+LOGIN = os.getenv("SHOP_LOGIN")
+PASSWORD = os.getenv("SHOP_PASSWORD")
+
+if not LOGIN or not PASSWORD:
+    raise ValueError("SHOP_LOGIN and SHOP_PASSWORD environment variables must be set in the .env file")
 
 session = requests.Session()
 
