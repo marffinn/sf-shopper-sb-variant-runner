@@ -9,36 +9,14 @@ Requires: pip install requests
 Usage:
     python build_variant_map.py
 """
+
 import requests
 import json
 import time
-import os
 
-def load_dotenv():
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    dotenv_path = os.path.join(script_dir, ".env")
-    if os.path.exists(dotenv_path):
-        with open(dotenv_path, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith("#"):
-                    continue
-                if "=" in line:
-                    key, val = line.split("=", 1)
-                    key = key.strip()
-                    val = val.strip()
-                    if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
-                        val = val[1:-1]
-                    os.environ[key] = val
-
-load_dotenv()
-
-SHOP_URL = os.environ.get("SHOP_URL", "https://sklep.starfix.eu")
-LOGIN = os.environ.get("SHOP_LOGIN")
-PASSWORD = os.environ.get("SHOP_PASSWORD")
-
-if not LOGIN or not PASSWORD:
-    raise ValueError("SHOP_LOGIN and SHOP_PASSWORD environment variables must be set in .env")
+SHOP_URL = "https://sklep.starfix.eu"
+LOGIN = "admin"           # your admin login
+PASSWORD = "chupacabra1234L!"   # do NOT commit this to any public repo
 
 session = requests.Session()
 
@@ -61,11 +39,11 @@ def get_all_products():
         if page >= data["pages"]:
             break
         page += 1
-        time.sleep(0.2)
+        time.sleep(0.2)  # be gentle on the API
     return products
 
 def get_stocks_bulk(stock_ids):
-    """Fetch up to 25 stock records per request using the bulk endpoint."""
+    """Fetch up to 25 stock records per request using the bulk endpoint, with retry on rate limits."""
     results = {}
     for i in range(0, len(stock_ids), 25):
         batch = stock_ids[i:i + 25]
@@ -77,15 +55,30 @@ def get_stocks_bulk(stock_ids):
             }
             for sid in batch
         ]
-        r = session.post(f"{SHOP_URL}/webapi/rest/bulk", json=calls)
-        r.raise_for_status()
+
+        max_retries = 6
+        for attempt in range(max_retries):
+            r = session.post(f"{SHOP_URL}/webapi/rest/bulk", json=calls)
+            if r.status_code == 429:
+                retry_after = r.headers.get("Retry-After")
+                wait = float(retry_after) if retry_after else (2 ** attempt) * 2
+                print(f"  Rate limited (429). Waiting {wait:.1f}s before retry {attempt + 1}/{max_retries}...")
+                time.sleep(wait)
+                continue
+            r.raise_for_status()
+            break
+        else:
+            raise RuntimeError("Exceeded max retries on bulk endpoint (rate limit).")
+
         response = r.json()
+        # Real shape: {"errors": false, "items": [{"id": "...", "code": 200, "body": {...}}]}
         for item in response.get("items", []):
             if item.get("code") == 200 and isinstance(item.get("body"), dict):
                 results[item["id"]] = item["body"]
             else:
                 print(f"  Warning: stock {item.get('id')} returned code {item.get('code')}")
-        time.sleep(2)
+
+        time.sleep(1.0)  # slower pace between batches to avoid hitting the limit again
     return results
 
 def main():
@@ -94,11 +87,17 @@ def main():
     print(f"Total products: {len(products)}")
 
     variant_map = {}
+    product_index = []
 
     for product in products:
         product_id = product["product_id"]
         url = product["translations"]["pl_PL"]["permalink"]
+        name = product["translations"]["pl_PL"]["name"]
+        base_code = product.get("code", "")
         stock_ids = product.get("options", [])
+
+        product_index.append({"name": name, "code": base_code, "url": url})
+
         if not stock_ids:
             continue
 
@@ -119,7 +118,11 @@ def main():
     with open("variant_map.json", "w", encoding="utf-8") as f:
         json.dump(variant_map, f, ensure_ascii=False, indent=0)
 
+    with open("products.json", "w", encoding="utf-8") as f:
+        json.dump(product_index, f, ensure_ascii=False, indent=0)
+
     print(f"\nDone. {len(variant_map)} variant SKUs written to variant_map.json")
+    print(f"Done. {len(product_index)} products written to products.json")
 
 if __name__ == "__main__":
     main()
