@@ -2,6 +2,7 @@
 {
 "id": "1981",
 "name": "Łączniki",
+"url": "https://sklep.starfix.eu/pl/c/Laczniki/1981",
 "products": [
 {
 "name": "Pistolet SWM300 do kotwy chemicznej PESF",
@@ -14,6 +15,7 @@
 {
 "id": "1982",
 "name": "Chemia budowlana",
+"url": "https://sklep.starfix.eu/pl/c/Chemia-budowlana/1982",
 "products": [
 {
 "name": "Poliestrowa kotwa chemiczna z akcesoriami",
@@ -41,6 +43,7 @@
 {
 "id": "1984",
 "name": "Wiertła i dłuta",
+"url": "https://sklep.starfix.eu/pl/c/Wiertla-i-dluta/1984",
 "products": [
 {
 "name": "Wiertło \"DACH EXPERT\" do wiercenia w dachówkach.",
@@ -143,6 +146,7 @@
 {
 "id": "1985",
 "name": "Elementy złączne",
+"url": "https://sklep.starfix.eu/pl/c/Elementy-zlaczne/1985",
 "products": [
 {
 "name": "Wkręt do mocowania łącznika LDTK w konstrukcji stalowej.",
@@ -285,11 +289,13 @@
 {
 "id": "1986",
 "name": "Zamocowania",
+"url": "https://sklep.starfix.eu/pl/c/Zamocowania/1986",
 "products": [],
 "children": [
 {
 "id": "1987",
 "name": "Ogólne",
+"url": "https://sklep.starfix.eu/pl/c/Ogolne/1987",
 "products": [
 {
 "name": "Łącznik z wkrętem hartowanym",
@@ -352,6 +358,7 @@
 {
 "id": "1988",
 "name": "Ramowe",
+"url": "https://sklep.starfix.eu/pl/c/Ramowe/1988",
 "products": [
 {
 "name": "Łącznik szybkiego-montażu KSMXN Skos",
@@ -409,6 +416,7 @@
 {
 "id": "1989",
 "name": "Lekkie",
+"url": "https://sklep.starfix.eu/pl/c/Lekkie/1989",
 "products": [
 {
 "name": "Łącznik do mocowania drobnych elementów DPN",
@@ -486,6 +494,7 @@
 {
 "id": "1990",
 "name": "Do termoizolacji",
+"url": "https://sklep.starfix.eu/pl/c/Do-termoizolacji/1990",
 "products": [
 {
 "name": "Łącznik LXK z trzpieniem wkręcanym",
@@ -570,16 +579,19 @@
 {
 "id": "2012",
 "name": "Akcesoria do wkrętarek",
+"url": "https://sklep.starfix.eu/pl/c/Akcesoria-do-wkretarek/2012",
 "products": [],
 "children": [
 {
 "id": "2013",
 "name": "Basic",
+"url": "https://sklep.starfix.eu/pl/c/Basic/2013",
 "products": [],
 "children": [
 {
 "id": "2014",
 "name": "Groty",
+"url": "https://sklep.starfix.eu/pl/c/Groty/2014",
 "products": [
 {
 "name": "Groty BASIC",
@@ -592,6 +604,7 @@
 {
 "id": "2015",
 "name": "Nasadki magnetyczne",
+"url": "https://sklep.starfix.eu/pl/c/Nasadki-magnetyczne/2015",
 "products": [
 {
 "name": "Nasadki BASIC",
@@ -604,6 +617,7 @@
 {
 "id": "2016",
 "name": "Uchwyty magnetyczne",
+"url": "https://sklep.starfix.eu/pl/c/Uchwyty-magnetyczne/2016",
 "products": [
 {
 "name": "Uchwyty magnetyczne BASIC",
@@ -618,11 +632,13 @@
 {
 "id": "2017",
 "name": "Extreme",
+"url": "https://sklep.starfix.eu/pl/c/Extreme/2017",
 "products": [],
 "children": [
 {
 "id": "2018",
 "name": "Groty",
+"url": "https://sklep.starfix.eu/pl/c/-Groty/2018",
 "products": [
 {
 "name": "Groty EXTREME",
@@ -635,6 +651,7 @@
 {
 "id": "2020",
 "name": "Uchwyty magnetyczne",
+"url": "https://sklep.starfix.eu/pl/c/-Uchwyty-magnetyczne/2020",
 "products": [
 {
 "name": "Uchwyty magnetyczne EXTREME",
@@ -649,11 +666,13 @@
 {
 "id": "2021",
 "name": "PRO",
+"url": "https://sklep.starfix.eu/pl/c/PRO/2021",
 "products": [],
 "children": [
 {
 "id": "2022",
 "name": "Groty",
+"url": "https://sklep.starfix.eu/pl/c/-Groty/2022",
 "products": [
 {
 "name": "Groty PRO",
@@ -666,6 +685,7 @@
 {
 "id": "2023",
 "name": "Nasadki magnetyczne",
+"url": "https://sklep.starfix.eu/pl/c/-Nasadki-magnetyczne/2023",
 "products": [
 {
 "name": "Nasadki PRO",
@@ -678,6 +698,7 @@
 {
 "id": "2024",
 "name": "Uchwyty magnetyczne",
+"url": "https://sklep.starfix.eu/pl/c/-Uchwyty-magnetyczne/2024",
 "products": [
 {
 "name": "Uchwyty magnetyczne PRO",

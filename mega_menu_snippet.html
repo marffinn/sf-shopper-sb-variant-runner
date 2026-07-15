@@ -1,0 +1,263 @@
+<nav id="sf-menu" style="position:relative; font-family:'Segoe UI',system-ui,sans-serif; display:flex; gap:4px;"></nav>
+
+<style>
+    .sf-menu-btn {
+        background: transparent;
+        border: none;
+        color: #d6d7d8;
+        font-size: 13.5px;
+        font-weight: 500;
+        padding: 10px 14px;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: background 0.12s ease, color 0.12s ease;
+        white-space: nowrap;
+    }
+
+    .sf-menu-btn:hover,
+    .sf-menu-btn.sf-menu-open {
+        background: #241416;
+        color: #e3495a;
+    }
+
+    .sf-menu-panel {
+        display: none;
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        background: #1b1d1f;
+        border: 1px solid #33363a;
+        border-radius: 8px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        padding: 16px;
+    }
+
+    .sf-menu-panel.sf-menu-visible {
+        display: flex;
+        gap: 24px;
+    }
+
+    .sf-menu-col {
+        min-width: 180px;
+    }
+
+    .sf-menu-col-title {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #c8202d;
+        font-weight: 700;
+        margin: 0 0 8px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #2c2f33;
+    }
+
+    .sf-menu-subgroup {
+        margin-bottom: 14px;
+    }
+
+    .sf-menu-subgroup:last-child {
+        margin-bottom: 0;
+    }
+
+    .sf-menu-subgroup-title {
+        font-size: 11px;
+        color: #7a7f84;
+        margin: 0 0 6px;
+        font-weight: 600;
+    }
+
+    .sf-menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 4px;
+        max-height: 380px;
+        overflow-y: auto;
+        padding-right: 4px;
+    }
+
+    .sf-menu-grid::-webkit-scrollbar {
+        width: 7px;
+    }
+
+    .sf-menu-grid::-webkit-scrollbar-track {
+        background: #1b1d1f;
+    }
+
+    .sf-menu-grid::-webkit-scrollbar-thumb {
+        background: #3a3d41;
+        border-radius: 4px;
+    }
+
+    .sf-menu-product {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 8px;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #d6d7d8;
+        transition: background 0.1s ease;
+    }
+
+    .sf-menu-product:hover {
+        background: #241416;
+        color: #e3495a;
+    }
+
+    .sf-menu-product img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+        background: #0f1011;
+        border-radius: 4px;
+        flex-shrink: 0;
+    }
+
+    .sf-menu-product .sf-menu-product-empty {
+        width: 32px;
+        height: 32px;
+        background: #0f1011;
+        border-radius: 4px;
+        flex-shrink: 0;
+    }
+
+    .sf-menu-product span {
+        font-size: 12.5px;
+        line-height: 1.3;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .sf-menu-seeall {
+        display: block;
+        margin-top: 4px;
+        padding: 6px 8px;
+        font-size: 11.5px;
+        font-weight: 600;
+        color: #c8202d;
+        text-decoration: none;
+        border-top: 1px solid #2c2f33;
+    }
+
+    .sf-menu-seeall:hover {
+        color: #e3495a;
+    }
+</style>
+
+<script>
+    (function () {
+        var MENU_URL = "https://raw.githubusercontent.com/marffinn/sf-shopper-sb-variant-runner/refs/heads/master/menu.json";
+        var nav = document.getElementById("sf-menu");
+        var openPanel = null;
+
+        var MAX_PRODUCTS_SHOWN = 6;
+
+        function productLink(p) {
+            return (
+                '<a class="sf-menu-product" href="' + p.url + '">' +
+                (p.img
+                    ? '<img src="' + p.img + '" loading="lazy" onerror="this.style.display=\'none\'" />'
+                    : '<span class="sf-menu-product-empty"></span>') +
+                '<span>' + p.name + '</span>' +
+                '</a>'
+            );
+        }
+
+        function seeAllLink(node) {
+            if (!node.url) return "";
+            return '<a class="sf-menu-seeall" href="' + node.url + '">Zobacz wszystkie (' + node.products.length + ') &rarr;</a>';
+        }
+
+        function productGrid(node, gridStyle) {
+            var shown = node.products.slice(0, MAX_PRODUCTS_SHOWN);
+            var html = '<div class="sf-menu-grid"' + (gridStyle ? ' style="' + gridStyle + '"' : '') + '>' +
+                shown.map(productLink).join("") +
+                '</div>';
+            if (node.products.length > MAX_PRODUCTS_SHOWN) {
+                html += seeAllLink(node);
+            }
+            return html;
+        }
+
+        // Recursively render a category node's content: either a flat product grid
+        // (leaf category) or a multi-column layout (one column per child).
+        function renderNodeContent(node) {
+            if (node.children && node.children.length) {
+                return node.children.map(function (child) {
+                    return (
+                        '<div class="sf-menu-col">' +
+                        '<div class="sf-menu-col-title">' + child.name + '</div>' +
+                        renderColumnBody(child) +
+                        '</div>'
+                    );
+                }).join("");
+            }
+            return '<div class="sf-menu-col">' + productGrid(node) + '</div>';
+        }
+
+        // Body of a single column: if the child itself has sub-children (e.g. Basic -> Groty/Nasadki/Uchwyty),
+        // render each as a labeled sub-group; otherwise just a product grid.
+        function renderColumnBody(node) {
+            if (node.children && node.children.length) {
+                return node.children.map(function (sub) {
+                    return (
+                        '<div class="sf-menu-subgroup">' +
+                        '<div class="sf-menu-subgroup-title">' + sub.name + '</div>' +
+                        productGrid(sub, "max-height:none; grid-template-columns:1fr;") +
+                        '</div>'
+                    );
+                }).join("");
+            }
+            return productGrid(node);
+        }
+
+        function closeAll() {
+            document.querySelectorAll(".sf-menu-panel").forEach(function (p) { p.classList.remove("sf-menu-visible"); });
+            document.querySelectorAll(".sf-menu-btn").forEach(function (b) { b.classList.remove("sf-menu-open"); });
+            openPanel = null;
+        }
+
+        function buildMenu(tree) {
+            tree.forEach(function (node, i) {
+                var wrap = document.createElement("div");
+                wrap.style.position = "relative";
+
+                var btn = document.createElement("button");
+                btn.className = "sf-menu-btn";
+                btn.textContent = node.name;
+
+                var panel = document.createElement("div");
+                panel.className = "sf-menu-panel";
+                panel.innerHTML = renderNodeContent(node);
+
+                btn.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                    var isOpen = panel.classList.contains("sf-menu-visible");
+                    closeAll();
+                    if (!isOpen) {
+                        panel.classList.add("sf-menu-visible");
+                        btn.classList.add("sf-menu-open");
+                        openPanel = panel;
+                    }
+                });
+
+                wrap.appendChild(btn);
+                wrap.appendChild(panel);
+                nav.appendChild(wrap);
+            });
+        }
+
+        document.addEventListener("click", function (e) {
+            if (!nav.contains(e.target)) closeAll();
+        });
+
+        fetch(MENU_URL)
+            .then(function (r) { return r.json(); })
+            .then(buildMenu)
+            .catch(function (err) { console.error("Menu load failed", err); });
+    })();
+</script>

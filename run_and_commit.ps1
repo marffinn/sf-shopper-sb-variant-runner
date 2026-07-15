@@ -25,7 +25,7 @@ if ($LASTEXITCODE -ne 0) {
 
 # Check for changes in variant_map.json and products.json
 Write-Msg "Checking for changes..."
-$changes = git status --porcelain variant_map.json products.json
+$changes = git status --porcelain variant_map.json products.json menu.json mega_menu_snippet.html
 if ($changes) {
     Write-Msg "Changes detected. Staging, committing, and pushing..."
     git add variant_map.json products.json

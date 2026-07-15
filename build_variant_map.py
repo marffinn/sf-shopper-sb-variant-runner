@@ -10,21 +10,17 @@ Usage:
     python build_variant_map.py
 """
 
-import os
 import requests
 import json
 import time
-from dotenv import load_dotenv
 
-# Load environment variables from .env file
+import os
+from dotenv import load_dotenv
 load_dotenv()
 
-SHOP_URL = os.getenv("SHOP_URL", "https://sklep.starfix.eu")
-LOGIN = os.getenv("SHOP_LOGIN")
-PASSWORD = os.getenv("SHOP_PASSWORD")
-
-if not LOGIN or not PASSWORD:
-    raise ValueError("SHOP_LOGIN and SHOP_PASSWORD environment variables must be set in the .env file")
+SHOP_URL = "https://sklep.starfix.eu"
+LOGIN = os.getenv("LOGIN")  # loaded from .env
+PASSWORD = os.getenv("PASSWORD")  # loaded from .env
 
 session = requests.Session()
 
@@ -47,8 +43,23 @@ def get_all_products():
         if page >= data["pages"]:
             break
         page += 1
-        time.sleep(1)  # be gentle on the API
+        time.sleep(0.2)  # be gentle on the API
     return products
+
+def get_all_categories():
+    categories = []
+    page = 1
+    while True:
+        r = session.get(f"{SHOP_URL}/webapi/rest/categories", params={"page": page})
+        r.raise_for_status()
+        data = r.json()
+        categories.extend(data["list"])
+        print(f"Fetched categories page {page}/{data['pages']}")
+        if page >= data["pages"]:
+            break
+        page += 1
+        time.sleep(0.2)
+    return categories
 
 def get_stocks_bulk(stock_ids):
     """Fetch up to 25 stock records per request using the bulk endpoint, with retry on rate limits."""
@@ -79,20 +90,62 @@ def get_stocks_bulk(stock_ids):
             raise RuntimeError("Exceeded max retries on bulk endpoint (rate limit).")
 
         response = r.json()
-        
+        # Real shape: {"errors": false, "items": [{"id": "...", "code": 200, "body": {...}}]}
         for item in response.get("items", []):
             if item.get("code") == 200 and isinstance(item.get("body"), dict):
                 results[item["id"]] = item["body"]
             else:
                 print(f"  Warning: stock {item.get('id')} returned code {item.get('code')}")
 
-        time.sleep(1.0)
+        time.sleep(1.0)  # slower pace between batches to avoid hitting the limit again
     return results
 
 def main():
     get_token()
     products = get_all_products()
     print(f"Total products: {len(products)}")
+
+    categories_raw = get_all_categories()
+    print(f"Total categories: {len(categories_raw)}")
+
+    # Shoper's categories API exposes no parent-child field at all (confirmed via direct
+    # API testing) -- only a "root" 1/0 flag. Since this shop's category tree is small
+    # (~22 categories) and rarely changes, the hierarchy is hardcoded here, built directly
+    # from the real admin tree. Update this map if you restructure categories later.
+    CATEGORY_PARENTS = {
+        "1987": "1986",  # Ogólne -> Zamocowania
+        "1988": "1986",  # Ramowe -> Zamocowania
+        "1989": "1986",  # Lekkie -> Zamocowania
+        "1990": "1986",  # Do termoizolacji -> Zamocowania
+        "2013": "2012",  # Basic -> Akcesoria do wkrętarek
+        "2017": "2012",  # Extreme -> Akcesoria do wkrętarek
+        "2021": "2012",  # PRO -> Akcesoria do wkrętarek
+        "2014": "2013",  # Groty -> Basic
+        "2015": "2013",  # Nasadki magnetyczne -> Basic
+        "2016": "2013",  # Uchwyty magnetyczne -> Basic
+        "2018": "2017",  # * Groty -> Extreme
+        "2019": "2017",  # * Nasadki magnetyczne -> Extreme
+        "2020": "2017",  # * Uchwyty magnetyczne -> Extreme
+        "2022": "2021",  # - Groty -> PRO
+        "2023": "2021",  # - Nasadki magnetyczne -> PRO
+        "2024": "2021",  # - Uchwyty magnetyczne -> PRO
+    }
+
+    def clean_name(name):
+        # strip the admin's "* " / "- " tier markers used only to disambiguate duplicate
+        # names in the flat admin list -- the parent folder (Basic/PRO/Extreme) already
+        # conveys that distinction in the nested menu.
+        return name.lstrip("*- ").strip()
+
+    # Build category lookup: id -> {name, parent_id, url}
+    categories = {}
+    for cat in categories_raw:
+        cat_id = str(cat["category_id"])
+        trans = cat.get("translations", {}).get("pl_PL", {})
+        name = clean_name(trans.get("name", f"Kategoria {cat_id}"))
+        cat_url = trans.get("permalink", "")
+        parent_id = CATEGORY_PARENTS.get(cat_id)  # None if not in the map -> top-level
+        categories[cat_id] = {"name": name, "parent_id": parent_id, "url": cat_url, "products": []}
 
     variant_map = {}
     product_index = []
@@ -103,17 +156,18 @@ def main():
         name = product["translations"]["pl_PL"]["name"]
         base_code = product.get("code", "")
         stock_ids = product.get("options", [])
+        cat_id = str(product.get("category_id")) if product.get("category_id") else None
 
-        # Extract product main image if available
-        main_image = product.get("main_image")
-        image_url = None
-        if isinstance(main_image, dict):
-            gfx_id = main_image.get("gfx_id")
-            name_file = main_image.get("name")
-            if gfx_id and name_file:
-                image_url = f"https://sklep.starfix.eu/environment/cache/images/productGfx_{gfx_id}_100_100/{name_file}"
+        main_image = product.get("main_image") or {}
+        img_url = None
+        if main_image.get("gfx_id") and main_image.get("name"):
+            img_url = f"{SHOP_URL}/userdata/public/gfx/{main_image['gfx_id']}/{main_image['name']}?overlay=1"
 
-        product_index.append({"name": name, "code": base_code, "url": url, "image": image_url})
+        product_entry = {"name": name, "code": base_code, "url": url, "img": img_url, "category_id": cat_id}
+        product_index.append(product_entry)
+
+        if cat_id and cat_id in categories:
+            categories[cat_id]["products"].append({"name": name, "url": url, "img": img_url})
 
         if not stock_ids:
             continue
@@ -128,9 +182,28 @@ def main():
             if not code or not options:
                 continue
             hash_str = ";".join(f"{k}:{v}" for k, v in options.items())
-            variant_map[code] = {"url": url, "hash": hash_str, "image": image_url}
+            variant_map[code] = {"url": url, "hash": hash_str, "img": img_url}
 
         print(f"Product {product_id}: {len(stocks)} variants processed")
+
+    # Build nested menu tree: top-level categories (parent_id None) with children nested under them
+    def build_tree(parent_id):
+        nodes = []
+        for cat_id, cat in categories.items():
+            if cat["parent_id"] == parent_id:
+                children = build_tree(cat_id)
+                # Only include categories that have products (directly or via children)
+                if cat["products"] or children:
+                    nodes.append({
+                        "id": cat_id,
+                        "name": cat["name"],
+                        "url": cat["url"],
+                        "products": cat["products"],
+                        "children": children
+                    })
+        return nodes
+
+    menu_tree = build_tree(None)
 
     with open("variant_map.json", "w", encoding="utf-8") as f:
         json.dump(variant_map, f, ensure_ascii=False, indent=0)
@@ -138,8 +211,12 @@ def main():
     with open("products.json", "w", encoding="utf-8") as f:
         json.dump(product_index, f, ensure_ascii=False, indent=0)
 
+    with open("menu.json", "w", encoding="utf-8") as f:
+        json.dump(menu_tree, f, ensure_ascii=False, indent=0)
+
     print(f"\nDone. {len(variant_map)} variant SKUs written to variant_map.json")
     print(f"Done. {len(product_index)} products written to products.json")
+    print(f"Done. {len(menu_tree)} top-level categories written to menu.json")
 
 if __name__ == "__main__":
     main()
