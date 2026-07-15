@@ -13,14 +13,24 @@ Usage:
 import requests
 import json
 import time
-
 import os
-from dotenv import load_dotenv
-load_dotenv()
+from pathlib import Path
 
 SHOP_URL = "https://sklep.starfix.eu"
-LOGIN = os.getenv("LOGIN")  # loaded from .env
-PASSWORD = os.getenv("PASSWORD")  # loaded from .env
+
+# Load environment variables from .env file if present
+env_path = Path(__file__).with_name('.env')
+if env_path.is_file():
+    with open(env_path) as env_file:
+        for line in env_file:
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            key, _, value = line.partition('=')
+            os.environ.setdefault(key.strip(), value.strip())
+
+LOGIN = os.getenv('LOGIN')
+PASSWORD = os.getenv('PASSWORD')
 
 session = requests.Session()
 
@@ -132,9 +142,6 @@ def main():
     }
 
     def clean_name(name):
-        # strip the admin's "* " / "- " tier markers used only to disambiguate duplicate
-        # names in the flat admin list -- the parent folder (Basic/PRO/Extreme) already
-        # conveys that distinction in the nested menu.
         return name.lstrip("*- ").strip()
 
     # Build category lookup: id -> {name, parent_id, url}
@@ -204,6 +211,14 @@ def main():
         return nodes
 
     menu_tree = build_tree(None)
+
+    TOP_LEVEL_ORDER = ["Zamocowania", "Łączniki", "Chemia budowlana", "Wiertła i dłuta", "Elementy złączne", "Akcesoria do wkrętarek"]
+    def sort_key(node):
+        try:
+            return TOP_LEVEL_ORDER.index(node["name"])
+        except ValueError:
+            return len(TOP_LEVEL_ORDER)  # unlisted categories go last, in original order
+    menu_tree.sort(key=sort_key)
 
     with open("variant_map.json", "w", encoding="utf-8") as f:
         json.dump(variant_map, f, ensure_ascii=False, indent=0)
