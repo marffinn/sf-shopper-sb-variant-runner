@@ -1,4 +1,5 @@
-<div id="sf-sku-search" style="position:relative; display:inline-block; width:300px; font-family:'Segoe UI',system-ui,sans-serif;">
+<div id="sf-sku-search"
+  style="position:relative; display:inline-block; width:300px; font-family:'Segoe UI',system-ui,sans-serif;">
   <div id="sf-sku-input-wrap" style="
     display:flex;
     align-items:center;
@@ -9,17 +10,12 @@
     padding:0 12px;
     transition:border-color 0.15s ease, box-shadow 0.15s ease;
   ">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7075" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; transition:stroke 0.15s ease;" id="sf-sku-icon">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b7075" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" style="flex-shrink:0; transition:stroke 0.15s ease;" id="sf-sku-icon">
       <circle cx="11" cy="11" r="7"></circle>
       <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
     </svg>
-    <input
-      type="text"
-      id="sf-sku-input"
-      placeholder="Szukaj produktu"
-      autocomplete="off"
-      spellcheck="false"
-      style="
+    <input type="text" id="sf-sku-input" placeholder="Szukaj produktu" autocomplete="off" spellcheck="false" style="
         flex:1;
         min-width:0;
         background:transparent;
@@ -30,8 +26,7 @@
         font-size:13.5px;
         letter-spacing:0.01em;
         padding:9px 0;
-      "
-    />
+      " />
     <span id="sf-sku-count" style="
       display:none;
       font-size:10.5px;
@@ -45,9 +40,7 @@
     "></span>
   </div>
 
-  <div
-    id="sf-sku-dropdown"
-    style="
+  <div id="sf-sku-dropdown" style="
       display:none;
       position:absolute;
       top:calc(100% + 6px);
@@ -60,27 +53,41 @@
       overflow-y:auto;
       z-index:1000;
       box-shadow:0 12px 28px rgba(0,0,0,0.45), 0 2px 6px rgba(0,0,0,0.3);
-    "
-  ></div>
+    "></div>
 </div>
 
 <style>
-  #sf-sku-dropdown::-webkit-scrollbar { width: 8px; }
-  #sf-sku-dropdown::-webkit-scrollbar-track { background: #1b1d1f; }
-  #sf-sku-dropdown::-webkit-scrollbar-thumb { background: #3a3d41; border-radius: 4px; }
-  #sf-sku-input::placeholder { color: #6b7075; }
+  #sf-sku-dropdown::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #sf-sku-dropdown::-webkit-scrollbar-track {
+    background: #1b1d1f;
+  }
+
+  #sf-sku-dropdown::-webkit-scrollbar-thumb {
+    background: #3a3d41;
+    border-radius: 4px;
+  }
+
+  #sf-sku-input::placeholder {
+    color: #6b7075;
+  }
+
   #sf-sku-input-wrap.sf-focused {
     border-color: #c8202d;
-    box-shadow: 0 0 0 3px rgba(200,32,45,0.15);
+    box-shadow: 0 0 0 3px rgba(200, 32, 45, 0.15);
   }
+
   .sf-sku-group-label {
     padding: 8px 12px 4px;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: #6b7075;
-    font-family: 'Segoe UI',system-ui,sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
   }
+
   .sf-sku-item {
     padding: 10px 12px;
     cursor: pointer;
@@ -93,8 +100,16 @@
     justify-content: space-between;
     gap: 10px;
   }
-  .sf-sku-item:last-child { border-bottom: none; }
-  .sf-sku-item:hover, .sf-sku-item.sf-active { background: #241416; }
+
+  .sf-sku-item:last-child {
+    border-bottom: none;
+  }
+
+  .sf-sku-item:hover,
+  .sf-sku-item.sf-active {
+    background: #241416;
+  }
+
   .sf-img-wrap {
     width: 40px;
     height: 40px;
@@ -106,33 +121,44 @@
     flex-shrink: 0;
     overflow: hidden;
   }
+
   .sf-img-wrap img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
   }
-  .sf-sku-item .sf-main { flex: 1; min-width: 0; overflow: hidden; }
+
+  .sf-sku-item .sf-main {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
   .sf-sku-item .sf-title {
-    font-family: 'Segoe UI',system-ui,sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
     color: #d6d7d8;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .sf-sku-item .sf-sub {
-    font-family: 'Consolas','SFMono-Regular',Menlo,monospace;
+    font-family: 'Consolas', 'SFMono-Regular', Menlo, monospace;
     font-size: 11px;
     color: #7a7f84;
     margin-top: 2px;
   }
+
   .sf-sku-item.sf-variant .sf-title {
-    font-family: 'Consolas','SFMono-Regular',Menlo,monospace;
+    font-family: 'Consolas', 'SFMono-Regular', Menlo, monospace;
   }
+
   .sf-sku-item mark {
     background: transparent;
     color: #e3495a;
     font-weight: 700;
   }
+
   .sf-sku-item .sf-go {
     font-size: 10px;
     color: #6b7075;
@@ -142,208 +168,213 @@
     opacity: 0;
     transition: opacity 0.1s ease;
   }
-  .sf-sku-item:hover .sf-go, .sf-sku-item.sf-active .sf-go {
+
+  .sf-sku-item:hover .sf-go,
+  .sf-sku-item.sf-active .sf-go {
     opacity: 1;
     color: #c8202d;
   }
+
   .sf-sku-empty {
     padding: 14px 12px;
     color: #7a7f84;
     font-size: 13px;
-    font-family: 'Segoe UI',system-ui,sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
   }
 </style>
 
 <script>
-(function () {
-  var VARIANT_MAP_URL = "https://raw.githubusercontent.com/marffinn/sf-shopper-sb-variant-runner/refs/heads/master/variant_map.json";
-  var PRODUCTS_URL = "https://raw.githubusercontent.com/marffinn/sf-shopper-sb-variant-runner/refs/heads/master/products.json";
+  (function () {
+    var VARIANT_MAP_URL = "https://raw.githubusercontent.com/marffinn/sf-shopper-sb-variant-runner/refs/heads/master/variant_map.json";
+    var PRODUCTS_URL = "https://raw.githubusercontent.com/marffinn/sf-shopper-sb-variant-runner/refs/heads/master/products.json";
 
-  var variantMap = null;
-  var productList = null;
-  var dataPromise = null;
+    var variantMap = null;
+    var productList = null;
+    var dataPromise = null;
 
-  var DIACRITICS = { 'ą':'a','ć':'c','ę':'e','ł':'l','ń':'n','ó':'o','ś':'s','ź':'z','ż':'z',
-                      'Ą':'a','Ć':'c','Ę':'e','Ł':'l','Ń':'n','Ó':'o','Ś':'s','Ź':'z','Ż':'z' };
-  function normalize(str) {
-    return str.toUpperCase().replace(/[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, function (ch) {
-      return (DIACRITICS[ch] || ch).toUpperCase();
-    });
-  }
-
-  function loadData() {
-    if (!dataPromise) {
-      dataPromise = Promise.all([
-        fetch(VARIANT_MAP_URL).then(function (r) { return r.json(); }),
-        fetch(PRODUCTS_URL).then(function (r) { return r.json(); })
-      ]).then(function (results) {
-        variantMap = results[0];
-        productList = results[1].map(function (p) {
-          return {
-            name: p.name,
-            code: p.code,
-            url: p.url,
-            image: p.image,
-            normName: normalize(p.name || ""),
-            normCode: normalize(p.code || "")
-          };
-        });
-        return true;
-      }).catch(function (err) {
-        console.error("Search widget: failed to load data", err);
-        variantMap = {};
-        productList = [];
-        return false;
+    var DIACRITICS = {
+      'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n', 'ó': 'o', 'ś': 's', 'ź': 'z', 'ż': 'z',
+      'Ą': 'a', 'Ć': 'c', 'Ę': 'e', 'Ł': 'l', 'Ń': 'n', 'Ó': 'o', 'Ś': 's', 'Ź': 'z', 'Ż': 'z'
+    };
+    function normalize(str) {
+      return str.toUpperCase().replace(/[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/g, function (ch) {
+        return (DIACRITICS[ch] || ch).toUpperCase();
       });
     }
-    return dataPromise;
-  }
-  loadData();
 
-  var input = document.getElementById("sf-sku-input");
-  var wrap = document.getElementById("sf-sku-input-wrap");
-  var icon = document.getElementById("sf-sku-icon");
-  var dropdown = document.getElementById("sf-sku-dropdown");
-  var countBadge = document.getElementById("sf-sku-count");
-  var activeIndex = -1;
+    function loadData() {
+      if (!dataPromise) {
+        dataPromise = Promise.all([
+          fetch(VARIANT_MAP_URL).then(function (r) { return r.json(); }),
+          fetch(PRODUCTS_URL).then(function (r) { return r.json(); })
+        ]).then(function (results) {
+          variantMap = results[0];
+          productList = results[1].map(function (p) {
+            return {
+              name: p.name,
+              code: p.code,
+              url: p.url,
+              img: p.img,
+              normName: normalize(p.name || ""),
+              normCode: normalize(p.code || "")
+            };
+          });
+          return true;
+        }).catch(function (err) {
+          console.error("Search widget: failed to load data", err);
+          variantMap = {};
+          productList = [];
+          return false;
+        });
+      }
+      return dataPromise;
+    }
+    loadData();
 
-  function goTo(url, hash) {
-    window.location.href = hash ? (url + "#variantOptions=" + hash) : url;
-  }
+    var input = document.getElementById("sf-sku-input");
+    var wrap = document.getElementById("sf-sku-input-wrap");
+    var icon = document.getElementById("sf-sku-icon");
+    var dropdown = document.getElementById("sf-sku-dropdown");
+    var countBadge = document.getElementById("sf-sku-count");
+    var activeIndex = -1;
 
-  function highlight(text, query) {
-    var idx = text.toUpperCase().indexOf(query);
-    if (idx === -1) return text;
-    return text.slice(0, idx) + "<mark>" + text.slice(idx, idx + query.length) + "</mark>" + text.slice(idx + query.length);
-  }
+    function goTo(url, hash) {
+      window.location.href = hash ? (url + "#variantOptions=" + hash) : url;
+    }
 
-  function renderResults(productMatches, variantMatches, query, totalProducts, totalVariants) {
-    activeIndex = -1;
-    var html = "";
+    function highlight(text, query) {
+      var idx = text.toUpperCase().indexOf(query);
+      if (idx === -1) return text;
+      return text.slice(0, idx) + "<mark>" + text.slice(idx, idx + query.length) + "</mark>" + text.slice(idx + query.length);
+    }
 
-    if (productMatches.length) {
-      html += '<div class="sf-sku-group-label">Produkty</div>';
-      productMatches.forEach(function (p) {
-        var imgHtml = p.image 
-          ? '<img src="' + p.image + '" alt="" />' 
-          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a0a5ab" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>';
+    function renderResults(productMatches, variantMatches, query, totalProducts, totalVariants) {
+      activeIndex = -1;
+      var html = "";
 
-        html +=
-          '<div class="sf-sku-item sf-product" data-url="' + p.url + '">' +
+      if (productMatches.length) {
+        html += '<div class="sf-sku-group-label">Produkty</div>';
+        productMatches.forEach(function (p) {
+          var imgHtml = p.img
+            ? '<img src="' + p.img + '" alt="" />'
+            : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a0a5ab" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>';
+
+          html +=
+            '<div class="sf-sku-item sf-product" data-url="' + p.url + '">' +
             '<div class="sf-img-wrap">' + imgHtml + '</div>' +
             '<div class="sf-main">' +
-              '<div class="sf-title">' + highlight(p.name, query) + '</div>' +
-              '<div class="sf-sub">' + p.code + '</div>' +
+            '<div class="sf-title">' + highlight(p.name, query) + '</div>' +
+            '<div class="sf-sub">' + p.code + '</div>' +
             '</div>' +
             '<span class="sf-go">Przejd\u017a &rarr;</span>' +
-          '</div>';
-      });
-    }
+            '</div>';
+        });
+      }
 
-    if (variantMatches.length) {
-      html += '<div class="sf-sku-group-label">Warianty (SKU)</div>';
-      variantMatches.forEach(function (code) {
-        var v = variantMap[code];
-        var imgHtml = (v && v.image)
-          ? '<img src="' + v.image + '" alt="" />' 
-          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a0a5ab" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>';
+      if (variantMatches.length) {
+        html += '<div class="sf-sku-group-label">Warianty (SKU)</div>';
+        variantMatches.forEach(function (code) {
+          var v = variantMap[code];
+          var imgHtml = (v && v.img)
+            ? '<img src="' + v.img + '" alt="" />'
+            : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a0a5ab" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>';
 
-        html +=
-          '<div class="sf-sku-item sf-variant" data-url="' + v.url + '" data-hash="' + v.hash + '">' +
+          html +=
+            '<div class="sf-sku-item sf-variant" data-url="' + v.url + '" data-hash="' + v.hash + '">' +
             '<div class="sf-img-wrap">' + imgHtml + '</div>' +
             '<div class="sf-main"><div class="sf-title">' + highlight(code, query) + '</div></div>' +
             '<span class="sf-go">Przejd\u017a &rarr;</span>' +
-          '</div>';
-      });
-    }
-
-    if (!productMatches.length && !variantMatches.length) {
-      dropdown.innerHTML = '<div class="sf-sku-empty">Brak wynik\u00f3w dla &quot;' + query.replace(/</g, "&lt;") + '&quot;</div>';
-      dropdown.style.display = "block";
-      countBadge.style.display = "none";
-      return;
-    }
-
-    dropdown.innerHTML = html;
-    dropdown.style.display = "block";
-
-    var totalShown = productMatches.length + variantMatches.length;
-    var totalAll = totalProducts + totalVariants;
-    if (totalAll > totalShown) {
-      countBadge.textContent = totalShown + " / " + totalAll;
-      countBadge.style.display = "inline-block";
-    } else {
-      countBadge.style.display = "none";
-    }
-
-    Array.prototype.forEach.call(dropdown.querySelectorAll(".sf-sku-item"), function (el) {
-      el.addEventListener("click", function () {
-        goTo(el.getAttribute("data-url"), el.getAttribute("data-hash"));
-      });
-    });
-  }
-
-  function runSearch(rawQuery) {
-    var query = normalize(rawQuery.trim());
-    if (!query) {
-      dropdown.style.display = "none";
-      countBadge.style.display = "none";
-      return;
-    }
-    loadData().then(function () {
-      var allProductMatches = productList.filter(function (p) {
-        return p.normName.indexOf(query) !== -1 || p.normCode.indexOf(query) !== -1;
-      });
-      var allVariantMatches = Object.keys(variantMap).filter(function (code) {
-        return code.indexOf(query) !== -1;
-      });
-
-      // Prioritize product-level matches (generic phrase search), fill remaining slots with variants
-      var productSlice = allProductMatches.slice(0, 5);
-      var remaining = 8 - productSlice.length;
-      var variantSlice = allVariantMatches.slice(0, Math.max(remaining, 0));
-
-      renderResults(productSlice, variantSlice, query, allProductMatches.length, allVariantMatches.length);
-    });
-  }
-
-  input.addEventListener("focus", function () { wrap.classList.add("sf-focused"); icon.setAttribute("stroke", "#c8202d"); });
-  input.addEventListener("blur", function () { wrap.classList.remove("sf-focused"); icon.setAttribute("stroke", "#6b7075"); });
-  input.addEventListener("input", function () { runSearch(input.value); });
-
-  input.addEventListener("keydown", function (e) {
-    var items = dropdown.querySelectorAll(".sf-sku-item");
-
-    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
-      if (!items.length) return;
-      e.preventDefault();
-      items[activeIndex] && items[activeIndex].classList.remove("sf-active");
-      activeIndex = e.key === "ArrowDown"
-        ? (activeIndex + 1) % items.length
-        : (activeIndex - 1 + items.length) % items.length;
-      items[activeIndex].classList.add("sf-active");
-      items[activeIndex].scrollIntoView({ block: "nearest" });
-      return;
-    }
-
-    if (e.key === "Enter") {
-      if (activeIndex >= 0 && items[activeIndex]) {
-        goTo(items[activeIndex].getAttribute("data-url"), items[activeIndex].getAttribute("data-hash"));
-      } else if (items.length) {
-        goTo(items[0].getAttribute("data-url"), items[0].getAttribute("data-hash"));
+            '</div>';
+        });
       }
+
+      if (!productMatches.length && !variantMatches.length) {
+        dropdown.innerHTML = '<div class="sf-sku-empty">Brak wynik\u00f3w dla &quot;' + query.replace(/</g, "&lt;") + '&quot;</div>';
+        dropdown.style.display = "block";
+        countBadge.style.display = "none";
+        return;
+      }
+
+      dropdown.innerHTML = html;
+      dropdown.style.display = "block";
+
+      var totalShown = productMatches.length + variantMatches.length;
+      var totalAll = totalProducts + totalVariants;
+      if (totalAll > totalShown) {
+        countBadge.textContent = totalShown + " / " + totalAll;
+        countBadge.style.display = "inline-block";
+      } else {
+        countBadge.style.display = "none";
+      }
+
+      Array.prototype.forEach.call(dropdown.querySelectorAll(".sf-sku-item"), function (el) {
+        el.addEventListener("click", function () {
+          goTo(el.getAttribute("data-url"), el.getAttribute("data-hash"));
+        });
+      });
     }
 
-    if (e.key === "Escape") {
-      dropdown.style.display = "none";
-      input.blur();
-    }
-  });
+    function runSearch(rawQuery) {
+      var query = normalize(rawQuery.trim());
+      if (!query) {
+        dropdown.style.display = "none";
+        countBadge.style.display = "none";
+        return;
+      }
+      loadData().then(function () {
+        var allProductMatches = productList.filter(function (p) {
+          return p.normName.indexOf(query) !== -1 || p.normCode.indexOf(query) !== -1;
+        });
+        var allVariantMatches = Object.keys(variantMap).filter(function (code) {
+          return code.indexOf(query) !== -1;
+        });
 
-  document.addEventListener("click", function (e) {
-    if (!document.getElementById("sf-sku-search").contains(e.target)) {
-      dropdown.style.display = "none";
+        // Prioritize product-level matches (generic phrase search), fill remaining slots with variants
+        var productSlice = allProductMatches.slice(0, 5);
+        var remaining = 8 - productSlice.length;
+        var variantSlice = allVariantMatches.slice(0, Math.max(remaining, 0));
+
+        renderResults(productSlice, variantSlice, query, allProductMatches.length, allVariantMatches.length);
+      });
     }
-  });
-})();
+
+    input.addEventListener("focus", function () { wrap.classList.add("sf-focused"); icon.setAttribute("stroke", "#c8202d"); });
+    input.addEventListener("blur", function () { wrap.classList.remove("sf-focused"); icon.setAttribute("stroke", "#6b7075"); });
+    input.addEventListener("input", function () { runSearch(input.value); });
+
+    input.addEventListener("keydown", function (e) {
+      var items = dropdown.querySelectorAll(".sf-sku-item");
+
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        if (!items.length) return;
+        e.preventDefault();
+        items[activeIndex] && items[activeIndex].classList.remove("sf-active");
+        activeIndex = e.key === "ArrowDown"
+          ? (activeIndex + 1) % items.length
+          : (activeIndex - 1 + items.length) % items.length;
+        items[activeIndex].classList.add("sf-active");
+        items[activeIndex].scrollIntoView({ block: "nearest" });
+        return;
+      }
+
+      if (e.key === "Enter") {
+        if (activeIndex >= 0 && items[activeIndex]) {
+          goTo(items[activeIndex].getAttribute("data-url"), items[activeIndex].getAttribute("data-hash"));
+        } else if (items.length) {
+          goTo(items[0].getAttribute("data-url"), items[0].getAttribute("data-hash"));
+        }
+      }
+
+      if (e.key === "Escape") {
+        dropdown.style.display = "none";
+        input.blur();
+      }
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!document.getElementById("sf-sku-search").contains(e.target)) {
+        dropdown.style.display = "none";
+      }
+    });
+  })();
 </script>
