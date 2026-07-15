@@ -1,292 +1,5 @@
 [
 {
-"id": "1981",
-"name": "Łączniki",
-"url": "https://sklep.starfix.eu/pl/c/Laczniki/1981",
-"products": [
-{
-"name": "Pistolet SWM300 do kotwy chemicznej PESF",
-"url": "https://sklep.starfix.eu/pl/p/Pistolet-SWM300-do-kotwy-chemicznej-PESF/9717",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35688/A.SWM300.png?overlay=1"
-}
-],
-"children": []
-},
-{
-"id": "1982",
-"name": "Chemia budowlana",
-"url": "https://sklep.starfix.eu/pl/c/Chemia-budowlana/1982",
-"products": [
-{
-"name": "Poliestrowa kotwa chemiczna z akcesoriami",
-"url": "https://sklep.starfix.eu/pl/p/Poliestrowa-kotwa-chemiczna-z-akcesoriami/9713",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35678/A.PESF300.png?overlay=1"
-},
-{
-"name": "Klej do styropianu",
-"url": "https://sklep.starfix.eu/pl/p/Klej-do-styropianu/9714",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35681/A.SKDS750.png?overlay=1"
-},
-{
-"name": "Tuleja siatkowa tworzywowa SVSF",
-"url": "https://sklep.starfix.eu/pl/p/Tuleja-siatkowa-tworzywowa-SVSF/9716",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35686/A.SVSF.png?overlay=1"
-},
-{
-"name": "Piana pistoletowa niskoprężna",
-"url": "https://sklep.starfix.eu/pl/p/Piana-pistoletowa-niskoprezna/9718",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35690/A.SPUP-750.png?overlay=1"
-}
-],
-"children": []
-},
-{
-"id": "1984",
-"name": "Wiertła i dłuta",
-"url": "https://sklep.starfix.eu/pl/c/Wiertla-i-dluta/1984",
-"products": [
-{
-"name": "Wiertło \"DACH EXPERT\" do wiercenia w dachówkach.",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-DACH-EXPERT-do-wiercenia-w-dachowkach./9566",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35233/A.SDE.png?overlay=1"
-},
-{
-"name": "Wiertło SDS do betonu.",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-SDS-do-betonu./9567",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35236/A.S2SDS.png?overlay=1"
-},
-{
-"name": "Wiertło SDS do betonu - EKSTREME",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-SDS-do-betonu-EKSTREME/9568",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35239/A.S4SDS.png?overlay=1"
-},
-{
-"name": "Wiertło Uni Perfect",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-Uni-Perfect/9569",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35242/A.SUP.png?overlay=1"
-},
-{
-"name": "Wiertło Uni Perfect SDS",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-Uni-Perfect-SDS/9570",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35245/A.SUPSDS.png?overlay=1"
-},
-{
-"name": "Wiertło do metalu METAL PERFECT",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-do-metalu-METAL-PERFECT/9571",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35248/A.SMP.png?overlay=1"
-},
-{
-"name": "WIERTŁO METAL PERFECT",
-"url": "https://sklep.starfix.eu/pl/p/WIERTLO-METAL-PERFECT/9572",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35251/A.SMP.png?overlay=1"
-},
-{
-"name": "Wiertło MUR STANDARD",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-MUR-STANDARD/9573",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35254/A.SMS.png?overlay=1"
-},
-{
-"name": "Wiertło Kobaltowe do metalu.",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-Kobaltowe-do-metalu./9574",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35257/A.SMC.png?overlay=1"
-},
-{
-"name": "Dłuta SDS",
-"url": "https://sklep.starfix.eu/pl/p/Dluta-SDS/9575",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35260/A.SSSDS.png?overlay=1"
-},
-{
-"name": "Wiertło szkło EXTREME",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-szklo-EXTREME/9576",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35263/A.SSE.png?overlay=1"
-},
-{
-"name": "Wiertło drewno perfect",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-drewno-perfect/9577",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35268/A.SDP.png?overlay=1"
-},
-{
-"name": "Wiertło SCS do ceramiki.",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-SCS-do-ceramiki./9578",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35269/A.SCS.png?overlay=1"
-},
-{
-"name": "Wiertło PROTERM EXPERT",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-PROTERM-EXPERT/9579",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35272/A.SPE.png?overlay=1"
-},
-{
-"name": "Wiertło metal elastic",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-metal-elastic/9580",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35275/A.SME.png?overlay=1"
-},
-{
-"name": "Wiertło metal elastic z podtoczonym trzpieniem.",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-metal-elastic-z-podtoczonym-trzpieniem./9581",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35279/A.SMEP.png?overlay=1"
-},
-{
-"name": "Wiertło GRES PROTECTOR",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-GRES-PROTECTOR/9630",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35453/A.SGP.png?overlay=1"
-},
-{
-"name": "Wiertło do drewna SDS",
-"url": "https://sklep.starfix.eu/pl/p/Wiertlo-do-drewna-SDS/9648",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35517/A.SDS230.png?overlay=1"
-},
-{
-"name": "SGE",
-"url": "https://sklep.starfix.eu/pl/p/SGE/9651",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35531/A.SGE.png?overlay=1"
-}
-],
-"children": []
-},
-{
-"id": "1985",
-"name": "Elementy złączne",
-"url": "https://sklep.starfix.eu/pl/c/Elementy-zlaczne/1985",
-"products": [
-{
-"name": "Wkręt do mocowania łącznika LDTK w konstrukcji stalowej.",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-do-mocowania-lacznika-LDTK-w-konstrukcji-stalowej./9603",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35363/A.WDS.png?overlay=1"
-},
-{
-"name": "Wkręt mocujący łącznik LDTK w konstrukcji betonowej.\r\nLDTK w konstrukcji betonowej",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-mocujacy-lacznik-LDTK-w-konstrukcji-betonowej.%0D%0ALDTK-w-konstrukcji-betonowej/9604",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35366/A.WDB.png?overlay=1"
-},
-{
-"name": "Kotwa metalowa",
-"url": "https://sklep.starfix.eu/pl/p/Kotwa-metalowa/9612",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35394/A.SMM.png?overlay=1"
-},
-{
-"name": "Łącznik stolarski",
-"url": "https://sklep.starfix.eu/pl/p/Lacznik-stolarski/9613",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35397/A.ŁS.png?overlay=1"
-},
-{
-"name": "Śruba stolarska",
-"url": "https://sklep.starfix.eu/pl/p/Sruba-stolarska/9614",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35401/A.WSP.jpg?overlay=1"
-},
-{
-"name": "Wkręt ciesielski z łbem stożkowym",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-ciesielski-z-lbem-stozkowym/9615",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35405/A.AWCS.png?overlay=1"
-},
-{
-"name": "Wkręt samowiercący do blachy.",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-samowiercacy-do-blachy./9616",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35409/A.WSW cz.png?overlay=1"
-},
-{
-"name": "Wkręt do drewna",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-do-drewna/9617",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35412/A.D.png?overlay=1"
-},
-{
-"name": "Wkręt fosfatyzowany do metalu",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-do-metalu/9618",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35416/A.M.png?overlay=1"
-},
-{
-"name": "Wkręt fosfatyzowany samowiercący do blachy",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-samowiercacy-do-blachy/9619",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35420/A.GS.png?overlay=1"
-},
-{
-"name": "Wkręt samowiercący z podkładką EPDM do blach i grubych profili",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-samowiercacy-z-podkladka-EPDM-do-blach-i-grubych-profili/9620",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35424/A.WS.png?overlay=1"
-},
-{
-"name": "Wkręt farmerski z ocynkowaną podkładką EPDM.",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-farmerski-z-ocynkowana-podkladka-EPDM./9621",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35428/A.F.png?overlay=1"
-},
-{
-"name": "Wkręt samowiercący z łbem sześciokątnym i podkładką EPDM.",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-samowiercacy-z-lbem-szesciokatnym-i-podkladka-EPDM./9622",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35430/A.WSS.png?overlay=1"
-},
-{
-"name": "Wkręt z łbem podkładkowym",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-z-lbem-podkladkowym/9623",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35432/A.WP.png?overlay=1"
-},
-{
-"name": "Wkręt z łbem talerzykowym.",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-z-lbem-talerzykowym./9624",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35435/A.WT.png?overlay=1"
-},
-{
-"name": "Kotwa stalowa pierścieniowa do dużych obciążeń, ocynkowana elektrolitycznie.",
-"url": "https://sklep.starfix.eu/pl/p/Kotwa-stalowa-pierscieniowa-do-duzych-obciazen%2C-ocynkowana-elektrolitycznie./9631",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35455/A.SKP1.png?overlay=1"
-},
-{
-"name": "Kotwa stalowa tulejowa do średnich obciążeń, ocynkowana elektrolitycznie.",
-"url": "https://sklep.starfix.eu/pl/p/Kotwa-stalowa-tulejowa-do-srednich-obciazen%2C-ocynkowana-elektrolitycznie./9632",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35459/A.SKT.png?overlay=1"
-},
-{
-"name": "Wkręt samowiercący do blachy",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-samowiercacy-do-blachy/9640",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35485/A.WSWS.png?overlay=1"
-},
-{
-"name": "Wkręt fosfatyzowany do metalu MX",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-do-metalu-MX/9647",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35516/A.MX.png?overlay=1"
-},
-{
-"name": "Wkręt farmerski z podkładką",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-farmerski-z-podkladka/9649",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35522/A.FM.png?overlay=1"
-},
-{
-"name": "Wkręt fosfatyzowany samowiercący do blachy z gniazdem Torx",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-samowiercacy-do-blachy-z-gniazdem-Torx/9650",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35524/A.GS.png?overlay=1"
-},
-{
-"name": "Kotwa rozprężana",
-"url": "https://sklep.starfix.eu/pl/p/Kotwa-rozprezana/9652",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35533/A.KW.png?overlay=1"
-},
-{
-"name": "Wkręt stolarski z łbem talerzykowym",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-stolarski-z-lbem-talerzykowym/9653",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35535/A.AWCT.png?overlay=1"
-},
-{
-"name": "Podkładka EPDM z łbem talerzykowym",
-"url": "https://sklep.starfix.eu/pl/p/Podkladka-EPDM-z-lbem-talerzykowym/9654",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35539/A.EPDM.png?overlay=1"
-},
-{
-"name": "Wkręt fosfatyzowany do drewna",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-do-drewna/9656",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35578/A.DX.png?overlay=1"
-},
-{
-"name": "Kotwa",
-"url": "https://sklep.starfix.eu/pl/p/Kotwa/9660",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35552/A.KS.png?overlay=1"
-},
-{
-"name": "Mieszalnik do kotwy chemicznej PESF",
-"url": "https://sklep.starfix.eu/pl/p/Mieszalnik-do-kotwy-chemicznej-PESF/9715",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35683/A.MVSF.png?overlay=1"
-}
-],
-"children": []
-},
-{
 "id": "1986",
 "name": "Zamocowania",
 "url": "https://sklep.starfix.eu/pl/c/Zamocowania/1986",
@@ -575,6 +288,293 @@
 "children": []
 }
 ]
+},
+{
+"id": "1981",
+"name": "Łączniki",
+"url": "https://sklep.starfix.eu/pl/c/Laczniki/1981",
+"products": [
+{
+"name": "Pistolet SWM300 do kotwy chemicznej PESF",
+"url": "https://sklep.starfix.eu/pl/p/Pistolet-SWM300-do-kotwy-chemicznej-PESF/9717",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35688/A.SWM300.png?overlay=1"
+}
+],
+"children": []
+},
+{
+"id": "1982",
+"name": "Chemia budowlana",
+"url": "https://sklep.starfix.eu/pl/c/Chemia-budowlana/1982",
+"products": [
+{
+"name": "Poliestrowa kotwa chemiczna z akcesoriami",
+"url": "https://sklep.starfix.eu/pl/p/Poliestrowa-kotwa-chemiczna-z-akcesoriami/9713",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35678/A.PESF300.png?overlay=1"
+},
+{
+"name": "Klej do styropianu",
+"url": "https://sklep.starfix.eu/pl/p/Klej-do-styropianu/9714",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35681/A.SKDS750.png?overlay=1"
+},
+{
+"name": "Tuleja siatkowa tworzywowa SVSF",
+"url": "https://sklep.starfix.eu/pl/p/Tuleja-siatkowa-tworzywowa-SVSF/9716",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35686/A.SVSF.png?overlay=1"
+},
+{
+"name": "Piana pistoletowa niskoprężna",
+"url": "https://sklep.starfix.eu/pl/p/Piana-pistoletowa-niskoprezna/9718",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35690/A.SPUP-750.png?overlay=1"
+}
+],
+"children": []
+},
+{
+"id": "1984",
+"name": "Wiertła i dłuta",
+"url": "https://sklep.starfix.eu/pl/c/Wiertla-i-dluta/1984",
+"products": [
+{
+"name": "Wiertło \"DACH EXPERT\" do wiercenia w dachówkach.",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-DACH-EXPERT-do-wiercenia-w-dachowkach./9566",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35233/A.SDE.png?overlay=1"
+},
+{
+"name": "Wiertło SDS do betonu.",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-SDS-do-betonu./9567",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35236/A.S2SDS.png?overlay=1"
+},
+{
+"name": "Wiertło SDS do betonu - EKSTREME",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-SDS-do-betonu-EKSTREME/9568",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35239/A.S4SDS.png?overlay=1"
+},
+{
+"name": "Wiertło Uni Perfect",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-Uni-Perfect/9569",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35242/A.SUP.png?overlay=1"
+},
+{
+"name": "Wiertło Uni Perfect SDS",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-Uni-Perfect-SDS/9570",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35245/A.SUPSDS.png?overlay=1"
+},
+{
+"name": "Wiertło do metalu METAL PERFECT",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-do-metalu-METAL-PERFECT/9571",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35248/A.SMP.png?overlay=1"
+},
+{
+"name": "WIERTŁO METAL PERFECT",
+"url": "https://sklep.starfix.eu/pl/p/WIERTLO-METAL-PERFECT/9572",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35251/A.SMP.png?overlay=1"
+},
+{
+"name": "Wiertło MUR STANDARD",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-MUR-STANDARD/9573",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35254/A.SMS.png?overlay=1"
+},
+{
+"name": "Wiertło Kobaltowe do metalu.",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-Kobaltowe-do-metalu./9574",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35257/A.SMC.png?overlay=1"
+},
+{
+"name": "Dłuta SDS",
+"url": "https://sklep.starfix.eu/pl/p/Dluta-SDS/9575",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35260/A.SSSDS.png?overlay=1"
+},
+{
+"name": "Wiertło szkło EXTREME",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-szklo-EXTREME/9576",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35263/A.SSE.png?overlay=1"
+},
+{
+"name": "Wiertło drewno perfect",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-drewno-perfect/9577",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35268/A.SDP.png?overlay=1"
+},
+{
+"name": "Wiertło SCS do ceramiki.",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-SCS-do-ceramiki./9578",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35269/A.SCS.png?overlay=1"
+},
+{
+"name": "Wiertło PROTERM EXPERT",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-PROTERM-EXPERT/9579",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35272/A.SPE.png?overlay=1"
+},
+{
+"name": "Wiertło metal elastic",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-metal-elastic/9580",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35275/A.SME.png?overlay=1"
+},
+{
+"name": "Wiertło metal elastic z podtoczonym trzpieniem.",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-metal-elastic-z-podtoczonym-trzpieniem./9581",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35279/A.SMEP.png?overlay=1"
+},
+{
+"name": "Wiertło GRES PROTECTOR",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-GRES-PROTECTOR/9630",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35453/A.SGP.png?overlay=1"
+},
+{
+"name": "Wiertło do drewna SDS",
+"url": "https://sklep.starfix.eu/pl/p/Wiertlo-do-drewna-SDS/9648",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35517/A.SDS230.png?overlay=1"
+},
+{
+"name": "SGE",
+"url": "https://sklep.starfix.eu/pl/p/SGE/9651",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35531/A.SGE.png?overlay=1"
+}
+],
+"children": []
+},
+{
+"id": "1985",
+"name": "Elementy złączne",
+"url": "https://sklep.starfix.eu/pl/c/Elementy-zlaczne/1985",
+"products": [
+{
+"name": "Wkręt do mocowania łącznika LDTK w konstrukcji stalowej.",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-do-mocowania-lacznika-LDTK-w-konstrukcji-stalowej./9603",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35363/A.WDS.png?overlay=1"
+},
+{
+"name": "Wkręt mocujący łącznik LDTK w konstrukcji betonowej.\r\nLDTK w konstrukcji betonowej",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-mocujacy-lacznik-LDTK-w-konstrukcji-betonowej.%0D%0ALDTK-w-konstrukcji-betonowej/9604",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35366/A.WDB.png?overlay=1"
+},
+{
+"name": "Kotwa metalowa",
+"url": "https://sklep.starfix.eu/pl/p/Kotwa-metalowa/9612",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35394/A.SMM.png?overlay=1"
+},
+{
+"name": "Łącznik stolarski",
+"url": "https://sklep.starfix.eu/pl/p/Lacznik-stolarski/9613",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35397/A.ŁS.png?overlay=1"
+},
+{
+"name": "Śruba stolarska",
+"url": "https://sklep.starfix.eu/pl/p/Sruba-stolarska/9614",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35401/A.WSP.jpg?overlay=1"
+},
+{
+"name": "Wkręt ciesielski z łbem stożkowym",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-ciesielski-z-lbem-stozkowym/9615",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35405/A.AWCS.png?overlay=1"
+},
+{
+"name": "Wkręt samowiercący do blachy.",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-samowiercacy-do-blachy./9616",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35409/A.WSW cz.png?overlay=1"
+},
+{
+"name": "Wkręt do drewna",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-do-drewna/9617",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35412/A.D.png?overlay=1"
+},
+{
+"name": "Wkręt fosfatyzowany do metalu",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-do-metalu/9618",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35416/A.M.png?overlay=1"
+},
+{
+"name": "Wkręt fosfatyzowany samowiercący do blachy",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-samowiercacy-do-blachy/9619",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35420/A.GS.png?overlay=1"
+},
+{
+"name": "Wkręt samowiercący z podkładką EPDM do blach i grubych profili",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-samowiercacy-z-podkladka-EPDM-do-blach-i-grubych-profili/9620",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35424/A.WS.png?overlay=1"
+},
+{
+"name": "Wkręt farmerski z ocynkowaną podkładką EPDM.",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-farmerski-z-ocynkowana-podkladka-EPDM./9621",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35428/A.F.png?overlay=1"
+},
+{
+"name": "Wkręt samowiercący z łbem sześciokątnym i podkładką EPDM.",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-samowiercacy-z-lbem-szesciokatnym-i-podkladka-EPDM./9622",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35430/A.WSS.png?overlay=1"
+},
+{
+"name": "Wkręt z łbem podkładkowym",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-z-lbem-podkladkowym/9623",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35432/A.WP.png?overlay=1"
+},
+{
+"name": "Wkręt z łbem talerzykowym.",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-z-lbem-talerzykowym./9624",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35435/A.WT.png?overlay=1"
+},
+{
+"name": "Kotwa stalowa pierścieniowa do dużych obciążeń, ocynkowana elektrolitycznie.",
+"url": "https://sklep.starfix.eu/pl/p/Kotwa-stalowa-pierscieniowa-do-duzych-obciazen%2C-ocynkowana-elektrolitycznie./9631",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35455/A.SKP1.png?overlay=1"
+},
+{
+"name": "Kotwa stalowa tulejowa do średnich obciążeń, ocynkowana elektrolitycznie.",
+"url": "https://sklep.starfix.eu/pl/p/Kotwa-stalowa-tulejowa-do-srednich-obciazen%2C-ocynkowana-elektrolitycznie./9632",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35459/A.SKT.png?overlay=1"
+},
+{
+"name": "Wkręt samowiercący do blachy",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-samowiercacy-do-blachy/9640",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35485/A.WSWS.png?overlay=1"
+},
+{
+"name": "Wkręt fosfatyzowany do metalu MX",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-do-metalu-MX/9647",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35516/A.MX.png?overlay=1"
+},
+{
+"name": "Wkręt farmerski z podkładką",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-farmerski-z-podkladka/9649",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35522/A.FM.png?overlay=1"
+},
+{
+"name": "Wkręt fosfatyzowany samowiercący do blachy z gniazdem Torx",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-samowiercacy-do-blachy-z-gniazdem-Torx/9650",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35524/A.GS.png?overlay=1"
+},
+{
+"name": "Kotwa rozprężana",
+"url": "https://sklep.starfix.eu/pl/p/Kotwa-rozprezana/9652",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35533/A.KW.png?overlay=1"
+},
+{
+"name": "Wkręt stolarski z łbem talerzykowym",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-stolarski-z-lbem-talerzykowym/9653",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35535/A.AWCT.png?overlay=1"
+},
+{
+"name": "Podkładka EPDM z łbem talerzykowym",
+"url": "https://sklep.starfix.eu/pl/p/Podkladka-EPDM-z-lbem-talerzykowym/9654",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35539/A.EPDM.png?overlay=1"
+},
+{
+"name": "Wkręt fosfatyzowany do drewna",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-fosfatyzowany-do-drewna/9656",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35578/A.DX.png?overlay=1"
+},
+{
+"name": "Kotwa",
+"url": "https://sklep.starfix.eu/pl/p/Kotwa/9660",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35552/A.KS.png?overlay=1"
+},
+{
+"name": "Mieszalnik do kotwy chemicznej PESF",
+"url": "https://sklep.starfix.eu/pl/p/Mieszalnik-do-kotwy-chemicznej-PESF/9715",
+"img": "https://sklep.starfix.eu/userdata/public/gfx/35683/A.MVSF.png?overlay=1"
+}
+],
+"children": []
 },
 {
 "id": "2012",
