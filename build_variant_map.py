@@ -13,24 +13,10 @@ Usage:
 import requests
 import json
 import time
-import os
-from pathlib import Path
 
 SHOP_URL = "https://sklep.starfix.eu"
-
-# Load environment variables from .env file if present
-env_path = Path(__file__).with_name('.env')
-if env_path.is_file():
-    with open(env_path) as env_file:
-        for line in env_file:
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            key, _, value = line.partition('=')
-            os.environ.setdefault(key.strip(), value.strip())
-
-LOGIN = os.getenv('LOGIN')
-PASSWORD = os.getenv('PASSWORD')
+LOGIN = "admin"           # your admin login
+PASSWORD = "chupacabra1234L!"   # do NOT commit this to any public repo
 
 session = requests.Session()
 
@@ -149,6 +135,8 @@ def main():
     for cat in categories_raw:
         cat_id = str(cat["category_id"])
         trans = cat.get("translations", {}).get("pl_PL", {})
+        if trans.get("active") != "1":
+            continue  # skip inactive categories (e.g. "Łączniki")
         name = clean_name(trans.get("name", f"Kategoria {cat_id}"))
         cat_url = trans.get("permalink", "")
         parent_id = CATEGORY_PARENTS.get(cat_id)  # None if not in the map -> top-level
