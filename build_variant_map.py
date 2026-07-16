@@ -13,10 +13,14 @@ Usage:
 import requests
 import json
 import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 SHOP_URL = "https://sklep.starfix.eu"
-LOGIN = "admin"           # your admin login
-PASSWORD = "chupacabra1234L!"   # do NOT commit this to any public repo
+LOGIN = os.getenv("SHOP_LOGIN")
+PASSWORD = os.getenv("SHOP_PASSWORD")
 
 session = requests.Session()
 
