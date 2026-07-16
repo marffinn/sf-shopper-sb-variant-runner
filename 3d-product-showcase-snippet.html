@@ -1,0 +1,204 @@
+<div id="starfix-3d-box"
+    style="width: 100%; height: 700px; background: radial-gradient(ellipse at center, #232527 0%, #121314 75%, #0a0b0c 100%); border-radius: 12px; overflow: hidden; position: relative; transition: all 0.5s ease; box-shadow: inset 0 0 80px rgba(0,0,0,0.5), 0 0 1px rgba(255,255,255,0.05);">
+    <div id="starfix-loading"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10,11,12,0.92); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 20; transition: opacity 0.5s ease;">
+        <div
+            style="width: 40px; height: 40px; border: 3px solid #2c2f33; border-top: 3px solid #c8202d; border-radius: 50%; animation: spin 1s linear infinite;">
+             </div>
+        <div
+            style="margin-top: 15px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #c9cacb; font-weight: 500; letter-spacing: 1px;">
+            LOADING 3D MODEL</div>
+    </div>
+    <div id="starfix-controls"
+        style="position: absolute; top: 20px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 10; background: rgba(15,16,17,0.55); padding: 12px 14px; border-radius: 8px; backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.06);">
+        <div class="starfix-toggle-wrapper" title="Toggle Wireframe"><input id="toggle-wireframe"
+                class="starfix-checkbox" type="checkbox" /> <label class="starfix-label"
+                style="color: #c9cacb; font-family: 'Segoe UI',system-ui,sans-serif; font-size: 13px;"
+                for="toggle-wireframe"> Wireframe </label></div>
+        <div class="starfix-toggle-wrapper" title="Toggle Ground Plane"><input id="toggle-ground"
+                class="starfix-checkbox" checked="checked" type="checkbox" /> <label class="starfix-label"
+                style="color: #c9cacb; font-family: 'Segoe UI',system-ui,sans-serif; font-size: 13px;"
+                for="toggle-ground"> Ground </label></div>
+        <div class="starfix-toggle-wrapper" title="Switch to bright studio background"><input id="toggle-bg"
+                class="starfix-checkbox" type="checkbox" /> <label class="starfix-label"
+                style="color: #c9cacb; font-family: 'Segoe UI',system-ui,sans-serif; font-size: 13px;" for="toggle-bg">
+                Jasne tło </label></div>
+    </div>
+</div>
+<script type="module">// <![CDATA[
+    import * as THREE from 'https://esm.sh/three@0.160.0';
+    import { GLTFLoader } from 'https://esm.sh/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
+    import { OrbitControls } from 'https://esm.sh/three@0.160.0/examples/jsm/controls/OrbitControls.js';
+    import { EXRLoader } from 'https://esm.sh/three@0.160.0/examples/jsm/loaders/EXRLoader.js';
+
+    (function () {
+        const container = document.getElementById('starfix-3d-box');
+        if (!container) return;
+
+        // EDIT THIS per product page (same as before):
+        const MODEL_URL = "https://raw.githubusercontent.com/marffinn/starfix-models/main/KAXN_K.glb";
+        const EXR_URL = "https://raw.githubusercontent.com/marffinn/starfix-models/main/monochrome_studio_02_2k.exr";
+
+        const DARK_BG = 0x141516;
+        const LIGHT_BG = 0xf8f8f8;
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(DARK_BG);
+
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.01, 1000);
+        camera.position.set(2, 2, 2);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, logarithmicDepthBuffer: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1.1; // calmer exposure now that the HDRI drives real reflections
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        container.appendChild(renderer.domElement);
+
+        // Softer three-point lighting -- the HDRI environment now supplies most of the
+        // ambient/fill light and specular reflections, so the rig only needs to add
+        // directionality and a crisp key highlight rather than carrying all the brightness.
+        const hemiLight = new THREE.HemisphereLight(0x8899aa, 0x11151a, 0.5);
+        scene.add(hemiLight);
+
+        const keyLight = new THREE.DirectionalLight(0xfff4e8, 1.6);
+        keyLight.position.set(5, 10, 5);
+        keyLight.castShadow = true;
+        keyLight.shadow.mapSize.width = 2048;
+        keyLight.shadow.mapSize.height = 2048;
+        keyLight.shadow.bias = -0.0001;
+        scene.add(keyLight);
+
+        const fillLight = new THREE.DirectionalLight(0xaaccff, 0.5);
+        fillLight.position.set(-5, 5, 5);
+        scene.add(fillLight);
+
+        const rimLight = new THREE.DirectionalLight(0xffffff, 1.1);
+        rimLight.position.set(0, 5, -10);
+        scene.add(rimLight);
+
+        const groundGeometry = new THREE.PlaneGeometry(50, 50);
+        const groundMaterial = new THREE.MeshStandardMaterial({
+            color: 0x0a0b0c,
+            roughness: 0.85,
+            metalness: 0.1,
+            transparent: true,
+            opacity: 0.75
+        });
+        const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+        ground.rotation.x = -Math.PI / 2;
+        ground.receiveShadow = true;
+        scene.add(ground);
+
+        const grid = new THREE.GridHelper(20, 40, 0x33363a, 0x222427);
+        grid.material.opacity = 0.25;
+        grid.material.transparent = true;
+        scene.add(grid);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.5;
+        controls.minDistance = 0.01;
+        controls.maxDistance = 50;
+
+        let modelMesh = null;
+        let exrEnvironment = null;
+        const gltfLoader = new GLTFLoader();
+        const exrLoader = new EXRLoader();
+
+        // Load the HDRI as the scene's *environment* (drives reflections/lighting on the
+        // metal parts) immediately -- this is the main thing that makes metal look real,
+        // independent of whether it's also shown as the visible background.
+        exrLoader.load(EXR_URL, (texture) => {
+            texture.mapping = THREE.EquirectangularReflectionMapping;
+            exrEnvironment = texture;
+            scene.environment = exrEnvironment;
+        });
+
+        gltfLoader.load(MODEL_URL, (gltf) => {
+            modelMesh = gltf.scene;
+
+            modelMesh.traverse((node) => {
+                if (node.isMesh) {
+                    node.castShadow = true;
+                    node.receiveShadow = true;
+                    // Materials are left exactly as baked into the GLB -- no roughness/
+                    // metalness/envMapIntensity overrides. They'll still pick up the
+                    // scene.environment reflections automatically since that's a renderer-
+                    // level property, not something baked per-material.
+                }
+            });
+
+            const box = new THREE.Box3().setFromObject(modelMesh);
+            const center = box.getCenter(new THREE.Vector3());
+            const size = box.getSize(new THREE.Vector3());
+
+            modelMesh.position.sub(center);
+            scene.add(modelMesh);
+
+            ground.position.y = -size.y / 2 - 0.001;
+            grid.position.y = ground.position.y + 0.0005;
+
+            const maxDim = Math.max(size.x, size.y, size.z);
+            const cameraDist = maxDim * 1.5;
+            camera.position.set(cameraDist, cameraDist * 0.6, cameraDist);
+
+            controls.target.set(0, 0, 0);
+            controls.update();
+
+            document.getElementById('starfix-loading').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('starfix-loading').style.display = 'none';
+            }, 500);
+        });
+
+        document.getElementById('toggle-wireframe').addEventListener('change', (e) => {
+            if (!modelMesh) return;
+            modelMesh.traverse((node) => {
+                if (node.isMesh) node.material.wireframe = e.target.checked;
+            });
+        });
+
+        document.getElementById('toggle-ground').addEventListener('change', (e) => {
+            ground.visible = e.target.checked;
+            grid.visible = e.target.checked;
+        });
+
+        // Repurposed: default is the dark studio (HDRI reflections active either way).
+        // Checking this just swaps the *visible* backdrop to a bright white studio look,
+        // for people who want to preview the product on a light background.
+        document.getElementById('toggle-bg').addEventListener('change', (e) => {
+            if (e.target.checked) {
+                scene.background = new THREE.Color(LIGHT_BG);
+                container.style.background = '#f0f0f0';
+                hemiLight.intensity = 0.9;
+                keyLight.intensity = 2.2;
+            } else {
+                scene.background = new THREE.Color(DARK_BG);
+                container.style.background = '';
+                hemiLight.intensity = 0.5;
+                keyLight.intensity = 1.6;
+            }
+        });
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+
+        animate();
+    })();
+// ]]></script>
