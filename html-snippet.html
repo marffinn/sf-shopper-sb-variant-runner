@@ -307,11 +307,7 @@
         countBadge.style.display = "none";
       }
 
-      Array.prototype.forEach.call(dropdown.querySelectorAll(".sf-sku-item"), function (el) {
-        el.addEventListener("click", function () {
-          goTo(el.getAttribute("data-url"), el.getAttribute("data-hash"));
-        });
-      });
+
     }
 
     function runSearch(rawQuery) {
@@ -337,6 +333,15 @@
         renderResults(productSlice, variantSlice, query, allProductMatches.length, allVariantMatches.length);
       });
     }
+
+    /* --- Dropdown click delegation (mousedown fires before blur) --- */
+    dropdown.addEventListener("mousedown", function (e) {
+      e.preventDefault();                       // keeps focus on input
+      var el = e.target.closest(".sf-sku-item");
+      if (el) {
+        goTo(el.getAttribute("data-url"), el.getAttribute("data-hash"));
+      }
+    });
 
     input.addEventListener("focus", function () { wrap.classList.add("sf-focused"); icon.setAttribute("stroke", "#c8202d"); });
     input.addEventListener("blur", function () { wrap.classList.remove("sf-focused"); icon.setAttribute("stroke", "#6b7075"); });

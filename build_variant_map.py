@@ -148,6 +148,7 @@ def main():
 
     variant_map = {}
     product_index = []
+    broken_permalink_products = []
 
     for product in products:
         product_id = product["product_id"]
@@ -156,6 +157,17 @@ def main():
         base_code = product.get("code", "")
         stock_ids = product.get("options", [])
         cat_id = str(product.get("category_id")) if product.get("category_id") else None
+
+        # Shoper sometimes bakes a literal line break (from a pasted multi-line name)
+        # straight into its own generated permalink, producing a URL that 404s no
+        # matter what we do on our end. Detect and skip these rather than shipping
+        # known-broken links -- the real fix is editing the product name in Shoper
+        # admin (removing the line break) so Shoper regenerates a clean permalink.
+        if "\r" in url or "\n" in name:
+            broken_permalink_products.append((product_id, name.replace("\r", "\\r").replace("\n", "\\n"), url))
+            continue
+
+        name = " ".join(name.split())  # normalize any other stray whitespace/newlines defensively
 
         main_image = product.get("main_image") or {}
         img_url = None
@@ -224,6 +236,16 @@ def main():
     print(f"\nDone. {len(variant_map)} variant SKUs written to variant_map.json")
     print(f"Done. {len(product_index)} products written to products.json")
     print(f"Done. {len(menu_tree)} top-level categories written to menu.json")
+
+    if broken_permalink_products:
+        print(f"\n{'='*70}")
+        print(f"WARNING: {len(broken_permalink_products)} product(s) skipped -- corrupted name/permalink")
+        print("Fix these in Shoper admin (remove the line break from the product name),")
+        print("then re-run this script to include them.")
+        print(f"{'='*70}")
+        for pid, name, url in broken_permalink_products:
+            print(f"  - Product #{pid}: \"{name}\"")
+            print(f"    {url}")
 
 if __name__ == "__main__":
     main()
