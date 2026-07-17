@@ -21,7 +21,7 @@
 "category_id": "1987"
 },
 {
-"name": "Łącznik z hakiem sufitowym ",
+"name": "Łącznik z hakiem sufitowym",
 "code": "KAXN_HS",
 "url": "https://sklep.starfix.eu/pl/p/Lacznik-z-hakiem-sufitowym-/9563",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35226/A.KAXN_HS.png?overlay=1",
@@ -308,9 +308,9 @@
 "category_id": "1985"
 },
 {
-"name": "Wkręt mocujący łącznik LDTK w konstrukcji betonowej.\r\nLDTK w konstrukcji betonowej",
+"name": "Wkręt mocujący łącznik LDTK w konstrukcji betonowej",
 "code": "WDB",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-mocujacy-lacznik-LDTK-w-konstrukcji-betonowej.%0D%0ALDTK-w-konstrukcji-betonowej/9604",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-mocujacy-lacznik-LDTK-w-konstrukcji-betonowej/9604",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35366/A.WDB.png?overlay=1",
 "category_id": "1985"
 },
@@ -455,7 +455,7 @@
 "category_id": "1985"
 },
 {
-"name": "Łącznik z hakiem prostym ",
+"name": "Łącznik z hakiem prostym",
 "code": "KAXK_HP",
 "url": "https://sklep.starfix.eu/pl/p/Lacznik-z-hakiem-prostym-/9626",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35439/A.KAXK_HP.png?overlay=1",
@@ -476,7 +476,7 @@
 "category_id": "1987"
 },
 {
-"name": "Komplet do mocowania toalety ",
+"name": "Komplet do mocowania toalety",
 "code": "WC",
 "url": "https://sklep.starfix.eu/pl/p/Komplet-do-mocowania-toalety-/9629",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35450/A.WC.png?overlay=1",
@@ -539,7 +539,7 @@
 "category_id": "1989"
 },
 {
-"name": "Łącznik wkręcany do styropianu DPK ",
+"name": "Łącznik wkręcany do styropianu DPK",
 "code": "DPK_CZ",
 "url": "https://sklep.starfix.eu/pl/p/Lacznik-wkrecany-do-styropianu-DPK-/9639",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35481/A.DPK1432CZ.png?overlay=1",
@@ -551,13 +551,6 @@
 "url": "https://sklep.starfix.eu/pl/p/Wkret-samowiercacy-do-blachy/9640",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35485/A.WSWS.png?overlay=1",
 "category_id": "1985"
-},
-{
-"name": "Łącznik wkręcany do styropinu z wkrętem\r\nbłędny opis",
-"code": "KDPK_H",
-"url": "https://sklep.starfix.eu/pl/p/Lacznik-wkrecany-do-styropinu-z-wkretem%0D%0Abledny-opis/9642",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35497/A.KDPK 2782 H.png?overlay=1",
-"category_id": "1989"
 },
 {
 "name": "Łącznik KAXDN Cylinder z wkrętem do drewna.",

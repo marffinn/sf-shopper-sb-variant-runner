@@ -26,7 +26,7 @@
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35223/A.KAXN_K.png?overlay=1"
 },
 {
-"name": "Łącznik z hakiem sufitowym ",
+"name": "Łącznik z hakiem sufitowym",
 "url": "https://sklep.starfix.eu/pl/p/Lacznik-z-hakiem-sufitowym-/9563",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35226/A.KAXN_HS.png?overlay=1"
 },
@@ -41,7 +41,7 @@
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35230/A.KAXN_H.png?overlay=1"
 },
 {
-"name": "Łącznik z hakiem prostym ",
+"name": "Łącznik z hakiem prostym",
 "url": "https://sklep.starfix.eu/pl/p/Lacznik-z-hakiem-prostym-/9626",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35439/A.KAXK_HP.png?overlay=1"
 },
@@ -56,7 +56,7 @@
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35447/A.U.png?overlay=1"
 },
 {
-"name": "Komplet do mocowania toalety ",
+"name": "Komplet do mocowania toalety",
 "url": "https://sklep.starfix.eu/pl/p/Komplet-do-mocowania-toalety-/9629",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35450/A.WC.png?overlay=1"
 },
@@ -177,14 +177,9 @@
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35478/A.KDPK 2752 WP.PNG?overlay=1"
 },
 {
-"name": "Łącznik wkręcany do styropianu DPK ",
+"name": "Łącznik wkręcany do styropianu DPK",
 "url": "https://sklep.starfix.eu/pl/p/Lacznik-wkrecany-do-styropianu-DPK-/9639",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35481/A.DPK1432CZ.png?overlay=1"
-},
-{
-"name": "Łącznik wkręcany do styropinu z wkrętem\r\nbłędny opis",
-"url": "https://sklep.starfix.eu/pl/p/Lacznik-wkrecany-do-styropinu-z-wkretem%0D%0Abledny-opis/9642",
-"img": "https://sklep.starfix.eu/userdata/public/gfx/35497/A.KDPK 2782 H.png?overlay=1"
 },
 {
 "name": "Łącznik z hakiem prostym KDPN HP z hakiem prostym",
@@ -431,8 +426,8 @@
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35363/A.WDS.png?overlay=1"
 },
 {
-"name": "Wkręt mocujący łącznik LDTK w konstrukcji betonowej.\r\nLDTK w konstrukcji betonowej",
-"url": "https://sklep.starfix.eu/pl/p/Wkret-mocujacy-lacznik-LDTK-w-konstrukcji-betonowej.%0D%0ALDTK-w-konstrukcji-betonowej/9604",
+"name": "Wkręt mocujący łącznik LDTK w konstrukcji betonowej",
+"url": "https://sklep.starfix.eu/pl/p/Wkret-mocujacy-lacznik-LDTK-w-konstrukcji-betonowej/9604",
 "img": "https://sklep.starfix.eu/userdata/public/gfx/35366/A.WDB.png?overlay=1"
 },
 {
