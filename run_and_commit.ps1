@@ -28,10 +28,11 @@ Write-Msg "Checking for changes..."
 $changes = git status --porcelain variant_map.json products.json menu.json mega_menu_snippet.html
 if ($changes) {
     Write-Msg "Changes detected. Staging, committing, and pushing..."
-    git add variant_map.json products.json
+    git add variant_map.json products.json menu.json mega_menu_snippet.html
     git commit -m "Auto-update variant map and products ($(Get-Date -Format 'yyyy-MM-dd HH:mm:ss'))"
     git push
     Write-Msg "Push completed successfully."
-} else {
+}
+else {
     Write-Msg "No changes to variant_map.json or products.json detected."
 }
