@@ -1,0 +1,14 @@
+# .shoperignore
+# Pliki i katalogi wymienione tutaj będą wykluczane z:
+# - pakowania do archiwum podczas publikacji
+# - uploadowania na serwer
+# - weryfikacji checksum
+
+# Przykłady:
+# node_modules/
+# .env
+# .env.*
+# *.log
+# temp/
+# .vscode/
+# .idea/

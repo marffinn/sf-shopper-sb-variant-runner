@@ -1,0 +1,223 @@
+{
+    "*": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": true
+        }
+    },
+    ".shoper/": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": false
+        }
+    },
+    ".shoper/*": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": false
+        }
+    },
+    "settings/schema.json": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    "settings/settings.json": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": false
+        },
+        "_links": {
+            "push": "*"
+        }
+    },
+    "settings/": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": false,
+            "canDelete": false
+        }
+    },
+    "settings/*": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    "settings/details.json": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": false
+        },
+        "_links": {
+            "push": "*"
+        }
+    },
+    "settings/thumbnail.jpg": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": true
+        },
+        "_links": {
+            "push": "thumbnail"
+        }
+    },
+    "styles/schema.json": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    "styles/settings.json": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": false
+        },
+        "_links": {
+            "push": "*"
+        }
+    },
+    "modules/": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    "modules/*": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    "macros/": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    "macros/*": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    "styles/": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": false,
+            "canDelete": false
+        }
+    },
+    "styles/*": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    "styles/custom.less": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": false
+        },
+        "_links": {
+            "push": "*"
+        }
+    },
+    "styles/src/": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": false
+        }
+    },
+    "styles/src/*": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": false
+        }
+    },
+    "skinstore/": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    "skinstore/*": {
+        "permissions": {
+            "canAdd": false,
+            "canEdit": false,
+            "canDelete": true
+        }
+    },
+    ".shoper/initial_checksum.json": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": false
+        }
+    },
+    ".shoper/initial_checksums_verify.json": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": false
+        }
+    },
+    ".shoper/current_checksum.json": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": false
+        }
+    },
+    ".shoper/current_checksums_verify.json": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": false
+        }
+    },
+    "filesList.json": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": true
+        },
+        "_links": {
+            "push": "*"
+        }
+    },
+    ".gitignore": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": true
+        }
+    },
+    ".shoperignore": {
+        "permissions": {
+            "canAdd": true,
+            "canEdit": true,
+            "canDelete": true
+        }
+    }
+}

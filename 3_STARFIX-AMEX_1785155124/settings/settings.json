@@ -1,0 +1,21 @@
+{
+    "system": {
+        "xsSize": "50",
+        "sSize": "150",
+        "mSize": "300",
+        "lSize": "500",
+        "xlSize": "750",
+        "productsCount": "24",
+        "systemFavicon": {
+            "file_name": "cropped-tlo-180x180.jpg",
+            "uploaded_file": "df0aa4c8-93a4-4923-98bc-19c65aead9e6.jpeg",
+            "width": 180,
+            "height": 180
+        },
+        "viewTransition": "1",
+        "loginDisplayMode": "popup",
+        "customIcons": 0,
+        "systemIcons": ""
+    },
+    "theme": []
+}
